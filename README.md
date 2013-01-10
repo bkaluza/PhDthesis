@@ -1,7 +1,7 @@
  Introduction
 ===============
 
-This package provides all of the files needed to support the production and typesetting of a PhD thesis at Jožef Stefan International Postgraduate School. For contributions, comments, and bug reports, please contact ?? at ?@ijs.si.
+This package provides all of the files needed to support the production and typesetting of a PhD thesis at Jozef Stefan International Postgraduate School. For contributions, comments, and bug reports, please contact ?? at ?@ijs.si.
 
 Contributions were made by Petra Kralj Novak, Vedrana Vidulin, Bostjan Kaluza, Biljana Mileva Boshkoska, Vid Podpecan and many others.
 
@@ -85,10 +85,31 @@ TODO
 
 TODO List
 =================
-- Write make file/script to compile the thesis
-- Add toc bookmarks
-- Fix reference formatting
-- 
 
+### Critical:
 
+ - **Tekst**:
+	- pisava modern \usepackage{lmodern}
+	- stran z referencami ima glavo in stevilko strani (glavo sem znal odstraniti, stevilke strani ne)
+	- naslova "List of figures" in "List of tables" sta v vecji pisavi (pa Abstract in povzetek tudi)
+	- imena poglavij v headerjih so z velikimi tiskanimi crkami (a je to prav)
+	- ostevilcevanje slik in tabel v appendixu nima predpone A,B,... pri sebi sem dodal \setcounter{figure}{0} \renewcommand{\thefigure}{A.\arabic{figure}} za vsak apendix posebej
+	- paket "arydshln" mora biti nalozen kasneje kot array, longtable, colortab, colortbl, sicer pride do cudnih napak (jaz sem dodal \usepackage{longtable} na konec in zelo dolgo iskal napako)
+	- ali je poglavje "Publications related to the dissertation" ostevilceno ali ne (ali je del appendixa)
+	- velikost fonta stevilke pri naslovu poglavja je vecja od fonta naslova
+	- zgornji rob pri naslovu poglavja je nizji od ostalih
+ - **V izpisu referenc**
+	* za url-jem se vedno izpise pika
+	* pri doktoratih in magisterijih ustanova ni v oklepaju
+	* inbook citati so cisto narobe, recimo pri Springer knjigah, ki so izsle kot volume X serije LNCS
+ - **Bibliografija:**
+	* v kategoriji "incollection" se izpis strani ponovi 3x
+	* pri proceedings se izpise samo booktitle (kratica) namesto title
+	* publisher se pojavlja v oklepaju (ne vem ali je to pravilno ali ne)
+	
+### Nice to have:
+ - 
+ - skripta, ki zgenerira thesis.pdf
+ - pdf bookmarks
+ - razsirjena navodila v thesis.pdf
 
