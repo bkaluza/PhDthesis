@@ -1,0 +1,73 @@
+\chapter{Introduction}
+
+This Chapter explains how to provide citations, publications related to the dissertation and abbreviations throughout the thesis. 
+
+%The thesis starts with a short overview of the area, positioning of the thesis, the main goals and the hypothesis of the thesis. 
+\section{Citations}
+In order to use the correct bibliography style, the bibliography style \textit{mps4$\_$5} is included in the main file \textit{thesis.tex}. Several examples for citations are provided in continuation.
+
+\begin{enumerate}
+	\item Article citation: \citep{Saaty2003a}, \citep{Saaty2003}
+	\item Web page citation: \citep{TheEconomist2010}
+	\item Author citation: \cite{Zopounidis2006}
+	\item Book citation: \citep{BohanecDEXi2011}
+	\item Conference article citation: \citep{Baracskai2003}
+	\item Several citations: 
+	\subitem \citep{BohanecDEXi2011, Burstein2008, Power2002}
+	\subitem  \citep{Skinner1999, Ronald} 
+	\subitem   \citep{Triantaphyllou, French, Bouyssou2006}
+	\subitem \citep{Figueira2005}
+	\subitem \citep{Jacquet-Lagreze1982} 
+	\subitem \citep{Saaty2008}
+	\subitem \citep{Moshkovich1995}
+	\subitem \citep{GrecoRSMCDA}
+	\subitem \citep{Adam2008, Figueira2005, Bouyssou2006}
+	\subitem \citep{Menzies2006, Saaty2008, Zadeh1975, Guo2009, Barron1996} 
+\end{enumerate}
+
+\section{Publications related to the dissertation}
+Publications related to the dissertation should be entered in  \textit{myPublication.bib} file. In order to enter them in Chapter~\ref{sec:publications}, one should cite (include) them in the file \textit{my$\_$publications.tex}.
+
+In order a publication to appear in the chapter \emph{Publications related to the dissertation}, after changing the file \textit{my$\_$publications.tex}, one has to run \textit{bibtex bu.aux} for all bu*.aux files (bu1.aux, bu2.aux etc.). After compiling, the references to the publications will appear.
+
+
+\section{Abbreviations}
+The first occurrence of an abbreviation has to be followed with its long explanation. See the examples below for different types of abbreviations.
+
+To add a new abbreviation, in the file \emph{abbreviation.txt} use the following command:
+\begin{verbatim} 
+   \newacronym\<label>}{<abbrv>}{<full>}
+\end{verbatim}
+
+In order to make the abbreviations appear in the list of abbreviations, the following procedure should be applied:
+\begin{enumerate}
+	\item {Apply latex compile twice (from the editor or in command line by using the command latex thesis.txt}
+	\item{Run the following two commands in command line:}
+		\subitem {makeindex -s thesis.ist -t thesis.alg -o thesis.acr thesis.acn}
+		\subitem {makeindex -s thesis.ist -t thesis.glg -o thesis.gls thesis.glo}
+\end{enumerate}
+%or simply run sh mkGloss.sh in the command line.
+
+Afterwards the latex compile will include the list of abbreviations. Any content changes in the file \emph{abbreviation.txt}, require repeating the above procedure in order for changes to take effect.
+
+The first occurrence of an abbreviation has to be followed with its long explanation. Several examples of usage of long abbreviations are given in continuation.
+
+\begin{itemize}
+	\item Adding an abbreviation and a citation: \gls{qq} \citep{BohanecBook}. \gls{qq} is an abbreviation that has been already included. 
+	\item \Gls{FNAC} is an abbreviation at the beginning of the sentence.
+	\item Adding a new abbreviation in text for \gls{icf}.
+	\item Usage of the long plural form of the acronym: \acrlongpl{icf}. 
+	\item Usage of the long singular form of the acronym: \acrlong{icf}.
+	\item Usage of the short plural form of the abbreviation: \acrshortpl{icf}. 
+	\item Usage of the short singular form of the abbreviation: \acrshort{icf}.
+\end{itemize}
+
+
+\section{Contribution}
+
+This is a new section.
+
+
+\section{Organization of the thesis}
+
+This is a new section.

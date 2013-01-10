@@ -1,0 +1,46 @@
+\chapter{Definitions, Theorems, Lemmas and Algorithms}
+
+%Continue with the next chapters. It is recommended to have none or at least two subsections in the chapter. The writer should try to avoid having only one section (or subsection) in a chapter (in a section). 
+This Chapter explains how to provide Definitions, Theorems, Lemmas and Algorithms in the thesis.
+
+\section{Definitions, Theorems, Lemmas}
+
+\begin{definition}
+		This is definition.
+\end{definition}
+
+\begin{theorem}
+		This is theorem. 
+\end{theorem}
+
+\begin{lemma}
+		This is lemma. 
+\end{lemma}
+
+\section{Algorithms}
+
+This is an example of how to write an Algorithm by using the packages \textit{algorithm} and \textit{algorithmic}.
+
+\begin{algorithm} 
+\caption{Regression algorithm for FNAC structure and dependent variable in the $p$ position}
+\label{alg_2}
+	\begin{algorithmic}[1]
+		\State $v\gets 0.5$ 
+		\State $q\gets 0.5$ \Comment{calculate median regression for $q=\frac{1}{2}$}
+		\If {$p==n$}		\Comment{if regression variable is positioned last;  n is the number of random variables/attributes};
+				\State $v\gets [1-u^{-\theta}+(qu^{1+\theta})^{-\frac{\theta}{1+\theta}}]^{-\frac{1}{\theta}}$ \Comment{calculate $v$}
+		\Else
+    		\For{$j = 1 \to (n-p)$,  \\ (or $j = 1 \to (n-2)$, when p=1,2) } \Comment{if position of regression variable other than the last}
+				\State $q\gets v$ \Comment{replace $q$ with the value of $v$}
+				\State $v\gets [1-u^{-\theta}+(qu^{1+\theta})^{-\frac{\theta}{1+\theta}}]^{-\frac{1}{\theta}}$  \Comment{recalculate the new value of $v$}
+				\State $i\gets i-1$ 
+			\EndFor \Comment{$p$ is the output variable position}
+			\State $q\gets v$ \Comment{replace $q$ with the value of $v$}
+			\State $v\gets [1-u^{-\theta}+(qu^{1+\theta})^{-\frac{\theta}{1+\theta}}]^{-\frac{1}{\theta}}$  \Comment{recalculate $v$; if $p=1$, $u=u_2$; if $p=2$, $u=u_1$}
+\EndIf
+
+\State $u\gets F_1(x_1)$ \Comment{replace $u$ by $F_1(x_1)$}
+\State $v\gets F_2(x_2)$ \Comment{replace $v$ by $F_2(x_2)$}
+		
+	\end{algorithmic}
+	\end{algorithm}

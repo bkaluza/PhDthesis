@@ -1,0 +1,188 @@
+%Prepared by Biljana Mileva Boshkoska. Based on on MPS Template from 19.12.2012. 
+% !TEX spellcheck = en_GB
+
+\documentclass[twoside,11pt]{MPSthesis}
+%\documentclass[a4paper,11pt,twoside,final,openany]{book}
+\usepackage[slovene,english]{babel}
+%compiles with pdflatex. If you are using Latex->Dvips->ps2pdf then change in MPSthesis.cls in line 259 the extension from MPSLogo.pdf to MPSLogo.eps
+
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{colortbl}
+
+\usepackage[nonumberlist,acronym,toc]{glossaries}
+\renewcommand{\acronymname}{List of abbreviations}
+\makeglossaries
+
+\usepackage{chapterbib}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{bm}
+\usepackage{amssymb,amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{subfig}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{mathptmx}
+\mathtoolsset{showonlyrefs}
+\usepackage{threeparttable}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{engord}
+\usepackage{bibunits}
+
+\usepackage{lineno}
+\usepackage{graphicx}
+\usepackage{arydshln}
+
+\usepackage{latexsym}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+
+\usepackage{dirtree} 
+\usepackage{xcolor}
+\usepackage{natbib}
+
+\usepackage{url} 
+%\usepackage[numbers]{natbib} % for numerical citations
+\usepackage{float}
+
+
+\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{b}{n}
+\newsavebox{\tempbox}
+\newcommand{\q}[1]{#1}
+\usepackage{listings}
+\usepackage[usenames]{color}
+\newtheorem{myprop}{Property}[chapter]
+\newtheorem{theorem}{Theorem}[chapter]
+\newcommand{\bftheta}{\pmb{\theta}}
+\newenvironment{pfof}[1]{\vspace{1ex}\noindent{\bf Proof of #1 aaa}\hspace{0.5em}}
+	{\hfill\qed\vspace{1ex}}
+
+% izgled code blokov
+\definecolor{light-gray}{gray}{0.95}
+\lstset{commentstyle=\textit}
+\lstset{backgroundcolor=\color{light-gray}, basicstyle=\scriptsize\ttfamily}
+\lstset{showspaces=false, showtabs=false, tabsize=2, aboveskip=\bigskipamount, belowskip=\bigskipamount}
+\newenvironment{fensi}[1]{\rule{\linewidth}{0.5mm} \textbf{#1} \vspace{0.2cm}
+\hrule \vspace{0.2cm} \noindent}{\vspace{0.15cm} \hrule \vspace{0.25cm} \noindent}
+\newtheorem{examp}{Example}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{definition}{Definition}[chapter]
+
+% Information for the tittle page
+\author{Author name and surname} % Name and Surname of the Author
+\title{Title of the dissertation }
+\titleShort{Title of the dissertation - First page}  % Title in English
+\subtitle{}           
+\naslov{Title of the dissertation in Slovenian} % Title in Slovenian
+\podnaslov{}
+\supervisor{Prof. Dr. Supervisors' name and surname}    % Supervisor: Name and Surname with the title
+%\cosupervisor{Prof. Dr. PROF PROF IF ANY}  % Co-Supervisor: Name and Surname with the title
+\mesec{MESEC}
+\leto{LETO}
+
+\supervisorlong{Prof. Dr. NAME LASTNAME, Institute}
+\cosupervisorlong{Prof. Dr. NAME LASTNAME, Institute}
+\cosupervisorlongAffil{Affiliation LONG IF ANY}
+
+
+
+\evaluationBoardChairman{Prof. Dr. NAME LASTNAME}
+\evaluationBoardChairmanAffiliation{Institute}
+
+\evaluationBoardMember{Prof. Dr. NAME LASTNAME}
+\evaluationBoardMemberAffiliation{Affiliation}
+
+\evaluationBoardMembers{Prof. Dr. NAME LASTNAME}
+\evaluationBoardMemberAffiliations{Affiliation}
+
+\begin{document}\sloppy
+%\linenumbers
+\frontmatter
+
+\makepreamble
+\maketitle
+\cleardoublepage
+\tableofcontents
+
+\input{frontmatter/abstract.tex}
+\newpage \thispagestyle{empty}
+
+\input{frontmatter/povzetek.tex}
+\newpage \thispagestyle{empty}
+
+\input{frontmatter/abbreviation.tex} %This file contains the abbreviations
+\printglossary[type=\acronymtype, toctitle=List of Abbreviations]
+\newpage \thispagestyle{empty}
+
+\mainmatter
+\mychapterstyle
+
+\input{chapters/introduction.tex}
+\newpage \thispagestyle{plain}
+
+
+\input{chapters/definitions.tex}
+\newpage \thispagestyle{empty}
+
+
+\input{chapters/formating.tex}
+\newpage \thispagestyle{empty}
+
+\input{chapters/acknowledgements.tex}
+\newpage \thispagestyle{empty}
+
+
+\bibliographystyle{mps4_5}
+%\setcitestyle{numbers} % uncomment this line if you need numbering of references
+\renewcommand{\bibname}{References}
+\bibliography{references} % Put Path to your BIB file
+
+\backmatter
+\input{my_publications.tex}
+
+\backmatter
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures \thispagestyle{headings}  
+% use command \thispagestyle{empty} if you need to remove heading in the first page 
+\backmatter
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables \thispagestyle{headings}
+
+\backmatter
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Algorithms}
+\listofalgorithms \thispagestyle{headings}
+
+
+
+\appendix
+
+%%
+%To hide sections in TOC use new command \tocless (uncomment next two lines)
+%\newcommand{\nocontentsline}[3]{}
+%\newcommand{\tocless}[2]{\bgroup\let\addcontentsline=\nocontentsline#1{#2}\egroup}
+%
+%% Example:
+%\tocless\section{hide}
+%\tocless\subsection{subhide}
+%%
+
+\renewcommand*{\thechapter}{ }
+\renewcommand*{\thesection}{\Alph{section}}
+
+\input{chapters/appendix1}
+\newpage \thispagestyle{empty}
+
+\input{chapters/appendix2}
+\newpage \thispagestyle{empty}
+
+
+\end{document}
