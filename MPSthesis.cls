@@ -275,7 +275,7 @@
 \renewcommand{\maketitle}{%
  \thispagestyle{empty}\vbox to \vsize{%
  \vspace{-0.5cm}
- 	\noindent \includegraphics[width=16cm]{MPSlogo.pdf}
+ 	\noindent \includegraphics[width=16cm]{figures/MPSlogo1.pdf}
 	{
 		\par
 		\noindent \rm  \Large \@author \par
