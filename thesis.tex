@@ -44,7 +44,7 @@
 
 %===================================================================
 % Document structure
-%===================================================================
+%
 \begin{document}
 
 %---------------------------------------------------------------------
@@ -91,9 +91,14 @@
 % Chapters
 %
 
-\include{chapters/chap_introduction}
+\include{chapters/chap1}
 \newpage \thispagestyle{empty}
 
+\include{chapters/chap2}
+\newpage \thispagestyle{empty}
+
+\include{chapters/chap3}
+\newpage \thispagestyle{empty}
 
 % Optional: make parts
 %\part{Part 1}
@@ -110,6 +115,10 @@
 %---------------------------------------------------------------------
 % Endmatter
 %
+
+\include{endmatter/acknowledgements}
+\newpage \thispagestyle{empty}
+
 \bibliographystyle{MPSPhDBib}                      % bibliography style with names and years
 \renewcommand{\bibname}{References}         % changes default name Bibliography to References
 \cite{*}
@@ -157,10 +166,10 @@
 \part*{Appendices}
 \label{part:appendices}
 
-\include{chapters/appx_my_publications}
+\include{endmatter/my_publications}
 \newpage \thispagestyle{empty}
 
-\include{chapters/appx_biography}
+\include{endmatter/biography}
 \newpage \thispagestyle{empty}
 
 
