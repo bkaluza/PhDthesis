@@ -420,6 +420,22 @@
 %\setcounter{tocdepth}{3}
 
 
+
+% definitions, theorems, lemmas, ...
+\newtheorem{examp}{Example}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{myprop}{Property}[chapter]
+\newtheorem{theorem}{Theorem}[chapter]
+
+
+% algorithms
+\usepackage{latexsym}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+
+
+
 \usepackage{nameref}
 
 % show full bib entries
